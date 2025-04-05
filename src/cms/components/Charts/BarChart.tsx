@@ -1,4 +1,3 @@
-import { twMerge } from "tailwind-merge";
 import { dataChart, ILabelChart } from "../../../shared/interface/chart";
 import LabelChart from "./LabelChart";
 
@@ -32,7 +31,14 @@ const Line = ({
 }) => {
   return (
     <div className="flex w-full">
-      <p className={twMerge(`min-w-[${titleMinWidth}px] text-end`)}>{item}</p>
+      <p
+        style={{
+          minWidth: titleMinWidth,
+        }}
+        className="text-end"
+      >
+        {item}
+      </p>
       <div className="border-t-1 border-dashed border-gray-custom/20 w-full ml-3"></div>
     </div>
   );
@@ -63,9 +69,10 @@ export default function BarChart({
       </div>
       <div>
         <p
-          className={twMerge(
-            `w-[${56}px] text-end mb-3 text-gray-custom font-normal`
-          )}
+          style={{
+            width: titleMinWidth,
+          }}
+          className="text-end mb-3 text-gray-custom font-normal"
         >
           Cái
         </p>
@@ -90,9 +97,10 @@ export default function BarChart({
               ))}
           </div>
           <div
-            className={twMerge(
-              `w-[calc(100%-${titleMinWidth}px)] h-full absolute top-0 right-0 flex items-end  justify-between`
-            )}
+            style={{
+              width: `calc(100% - ${titleMinWidth}px)`,
+            }}
+            className="h-full absolute top-0 right-0 flex items-end justify-between"
           >
             {data?.length > 0 &&
               data.map((item: dataChart, index: number) => (
@@ -118,9 +126,10 @@ export default function BarChart({
           </div>
         </div>
         <p
-          className={twMerge(
-            `w-[${56}px] text-end mt-[20px] text-gray-custom font-normal`
-          )}
+          style={{
+            width: titleMinWidth,
+          }}
+          className="text-end mt-[20px] text-gray-custom font-normal"
         >
           Mặt hàng
         </p>
