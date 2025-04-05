@@ -9,9 +9,9 @@ const SelectDateFilter = (itemMenu: IItemDropDown[]) => {
       children={
         <div className=" flex items-center gap-1 p-2 md:p-3 md:gap-2 rounded-[8px] border-[0.5px] border-gray-custom">
           <CiCalendar />
-          <span className="text-base font-normal text-black-custom">
+          <p className="text-sm md:text-base font-normal text-black-custom text-nowrap">
             Quy nay
-          </span>
+          </p>
           <IoChevronDownOutline
             size={16}
             className="min-w-4 text-gray-custom"
