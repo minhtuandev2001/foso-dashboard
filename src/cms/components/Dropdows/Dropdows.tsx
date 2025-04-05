@@ -28,7 +28,7 @@ export default function Dropdows({ children, itemMenu }: Props) {
       {children}
       <div
         className={twMerge(
-          `hidden absolute top-full right-0 z-[9999] pt-2 animate-fade-down group-hover/show:block ${
+          `hidden absolute top-full right-0 z-[9999] pt-2 animate-fade animate-duration-200 group-hover/show:block ${
             showMenu ? "block" : ""
           }`
         )}

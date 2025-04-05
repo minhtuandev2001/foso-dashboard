@@ -87,7 +87,7 @@ export default function MainHeader() {
             />
             <div className="block md:hidden">
               {isSearchMobileOpen && (
-                <div className="flex items-center rounded-md p-2 fixed top-[70px] left-1/2 -translate-x-1/2 z-[9999] shadow-dropdow-custom w-[80%] border border-gray-500/30 animate-jump-in">
+                <div className="flex items-center rounded-md p-2 fixed top-[70px] left-1/2 -translate-x-1/2 z-[9999] shadow-dropdow-custom w-[80%] border border-gray-500/30 animate-flip-down animate-duration-200">
                   <CiSearch size={16} className="min-w-4 text-gray-custom" />
                   <input
                     type="text"
