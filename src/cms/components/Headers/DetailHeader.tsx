@@ -18,7 +18,7 @@ export default function DetailHeader({
       className={twMerge(`p-2 pr-2 md:p-6 md:pr-4 w-full h-full ${className}`)}
     >
       <div className="flex items-center justify-between w-full gap-5 pb-6 h-full">
-        <h2 className="text-lg font-medium leading-[28px] text-black-custom line-clamp-2">
+        <h2 className="text-lg font-medium leading-[28px] text-black-custom line-clamp-2 max-w-[250px] md:max-w-full">
           {title}
         </h2>
         <div>{filter}</div>

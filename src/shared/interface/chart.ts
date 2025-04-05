@@ -3,7 +3,7 @@ export interface ILabelChart {
   color: string;
 }
 
-export interface dataChart {
+export interface IDataChart {
   label: string;
   colums: {
     data: number;

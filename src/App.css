@@ -16,6 +16,8 @@
   --font-lexend: "Lexend Deca", sans-serif;
 
   /* shadow */
-
   --shadow-dropdow-custom: 0px 12px 24px -4px #919eab1f;
+
+  /* reponsive */
+  --breakpoint-table-custom: 895px;
 }

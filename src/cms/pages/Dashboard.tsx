@@ -1,78 +1,13 @@
 import { IItemDropDown } from "../../shared/interface/itemDropdown";
 import MainHeader from "../components/Headers/MainHeader";
 import DetailHeader from "../components/Headers/DetailHeader";
-import BarChart from "../components/Charts/BarChart";
-import { dataChart } from "../../shared/interface/chart";
 import SelectDateFilter from "../components/Selects/SelectDateFilter";
-
-const labels = [
-  {
-    title: "Kế hoạch",
-    color: "#0375f3",
-  },
-  {
-    title: "thực hiện",
-    color: "#1fc583",
-  },
-];
-
-const data: dataChart[] = [
-  {
-    label: "Áo ba lỗ",
-    colums: [
-      {
-        data: 60,
-      },
-      {
-        data: 40,
-      },
-    ],
-  },
-  {
-    label: "Áo sơ mi",
-    colums: [
-      {
-        data: 100,
-      },
-      {
-        data: 60,
-      },
-    ],
-  },
-  {
-    label: "Áo thun polo",
-    colums: [
-      {
-        data: 80,
-      },
-      {
-        data: 20,
-      },
-    ],
-  },
-  {
-    label: "Quần baggy",
-    colums: [
-      {
-        data: 70,
-      },
-      {
-        data: 45,
-      },
-    ],
-  },
-  {
-    label: "Quần jogger",
-    colums: [
-      {
-        data: 90,
-      },
-      {
-        data: 57,
-      },
-    ],
-  },
-];
+import BarChart from "../components/Charts/BarChart";
+import {
+  dataChart,
+  dataChartHorizontal,
+  labels,
+} from "../../dummyData/dataChart";
 
 export default function Dashboard() {
   const itemMenu: IItemDropDown[] = [
@@ -104,7 +39,7 @@ export default function Dashboard() {
       <div className="px-2 lg:px-[48px] w-full h-full">
         <div>card</div>
         <div className="w-full h-full">
-          <div className="w-full h-full">
+          <div className="w-full h-full flex gap-6 flex-col table-custom:flex-row">
             <DetailHeader
               title="Kế hoạch sản xuất"
               filter={SelectDateFilter(itemMenu)}
@@ -112,10 +47,31 @@ export default function Dashboard() {
               children={
                 <BarChart
                   labels={labels}
-                  data={data}
+                  data={dataChart}
                   step={20}
                   max={100}
                   chartHeight={316}
+                  showLegend
+                  lableCategory="Mặt hàng"
+                  lableValue="Cái"
+                />
+              }
+            />
+            <DetailHeader
+              title="Top 5 khách hàng có sản lượng nhiều nhất"
+              filter={SelectDateFilter(itemMenu)}
+              className="shadow-dropdow-custom"
+              children={
+                <BarChart
+                  labels={labels}
+                  data={dataChartHorizontal}
+                  step={20}
+                  max={100}
+                  horizontal={true}
+                  showLegend={false}
+                  chartHeight={316}
+                  lableCategory="Khách hàng"
+                  lableValue="Sản lượng"
                 />
               }
             />
