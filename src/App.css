@@ -9,7 +9,12 @@
   --color-orange-custom: #ff8f0d;
   --color-black-custom: #141522;
   --color-red-custom: #ee1e1e;
+  --color-gray-custom: #52575e;
 
   /* font */
   --font-lexend: "Lexend Deca", sans-serif;
+
+  /* shadow */
+
+  --shadow-dropdow-custom: 0px 12px 24px -4px #919eab1f;
 }
