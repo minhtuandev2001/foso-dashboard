@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+@import "tailwindcss";
+@import "tailwindcss-animated";
+
+@theme {
+  /* color */
+  --color-blue-custom: #003da0;
+  --color-light-blue-custom: #0375f3;
+  --color-green-custom: #1fc583;
+  --color-orange-custom: #ff8f0d;
+  --color-black-custom: #141522;
+  --color-red-custom: #ee1e1e;
+  --color-gray-custom: #52575e;
+
+  /* font */
+  --font-lexend: "Lexend Deca", sans-serif;
+
+  /* shadow */
+
+  --shadow-dropdow-custom: 0px 12px 24px -4px #919eab1f;
+}
