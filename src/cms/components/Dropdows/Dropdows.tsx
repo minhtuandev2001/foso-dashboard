@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useOutsideClick } from "../../../hook/useOutSideClick";
+import { IItemDropDown } from "../../../shared/interface/itemDropdown";
 
-interface IItem {
-  render: () => React.ReactElement;
-  icon: React.ReactElement;
-  isMobile?: boolean;
-}
 interface Props {
   children: React.ReactNode;
-  itemMenu?: IItem[];
+  itemMenu?: IItemDropDown[];
 }
 export default function Dropdows({ children, itemMenu }: Props) {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -35,7 +31,7 @@ export default function Dropdows({ children, itemMenu }: Props) {
       >
         <div className="p-[5px] bg-white shadow-dropdow-custom w-full min-w-[200px] rounded-md">
           {(itemMenu?.length ?? 0) > 0 &&
-            itemMenu?.map((item: IItem, index: number) => (
+            itemMenu?.map((item: IItemDropDown, index: number) => (
               <li
                 key={index}
                 className={`flex items-center flex-nowrap gap-2 w-full cursor-pointer px-3 py-2 hover:bg-gray-custom/10 rounded-md transition-all ${
