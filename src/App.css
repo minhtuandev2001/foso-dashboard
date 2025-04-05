@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* color */
+  --color-blue-custom: #003da0;
+  --color-light-blue-custom: #0375f3;
+  --color-green-custom: #1fc583;
+  --color-orange-custom: #ff8f0d;
+  --color-black-custom: #141522;
+  --color-red-custom: #ee1e1e;
+
+  /* font */
+  --font-lexend: "Lexend Deca", sans-serif;
+}

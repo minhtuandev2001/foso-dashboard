@@ -1,5 +1,12 @@
+import Dashboard from "./cms/pages/Dashboard";
+import "./App.css";
+
 function App() {
-  return <div className="bg-red-500 h-10 w-10"></div>;
+  return (
+    <main>
+      <Dashboard />
+    </main>
+  );
 }
 
 export default App;
