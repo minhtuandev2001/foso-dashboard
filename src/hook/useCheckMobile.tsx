@@ -12,5 +12,5 @@ export default function useCheckMobile() {
     handleWindowSizeChange();
   }, []);
 
-  return width <= 768;
+  return width <= 1024;
 }
