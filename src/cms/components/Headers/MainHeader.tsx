@@ -47,7 +47,7 @@ export default function MainHeader() {
         <div className="w-[72.77px] h-[22px] md:w-[82.77px] md:h-[32px]">
           <img src={logo} alt="logo" className="w-full h-full object-cover" />
         </div>
-        <ul className="flex items-center text-sm font-normal cursor-pointer hidden">
+        <ul className="items-center text-sm font-normal cursor-pointer hidden lg:flex">
           <li className="py-[4px] px-2 hover:text-white/70 transition-all ">
             Danh mục
           </li>

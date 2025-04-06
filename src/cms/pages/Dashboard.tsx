@@ -13,6 +13,9 @@ import { dataPieChart, statementExecution } from "../../dummyData/dataPieChart";
 import SalesTrackingCard from "../components/Card/SalesTrackingCard";
 import { dataCardProduct, dataSale } from "../../dummyData/dataCards";
 import { IDataSaleTrackingCard } from "../../shared/interface/card";
+import ProgressItem from "../components/ProgressItem";
+import { dataProductProgress } from "../../dummyData/dataProductProgress";
+import { IProgressItemProps } from "../../shared/interface/productProgress";
 
 export default function Dashboard() {
   const itemMenu: IItemDropDown[] = [
@@ -93,7 +96,7 @@ export default function Dashboard() {
               }
             />
           </div>
-          <div>
+          <div className="flex flex-col gap-6">
             <DetailHeader
               title="Tình hình sản xuất"
               filter={SelectDateFilter(itemMenu)}
@@ -117,6 +120,29 @@ export default function Dashboard() {
                         )
                       )}
                   </div>
+                </div>
+              }
+            />
+            <DetailHeader
+              title="Tiến độ sản xuất theo nhóm"
+              filter={SelectDateFilter(itemMenu)}
+              className="shadow-dropdow-custom"
+              children={
+                <div className="flex flex-col gap-8 max-h-[466px] overflow-y-scroll pr-1">
+                  {dataProductProgress && dataProductProgress.length > 0
+                    ? dataProductProgress.map(
+                        (item: IProgressItemProps, index: number) => (
+                          <ProgressItem
+                            data={{ ...item }}
+                            key={index}
+                          ></ProgressItem>
+                        )
+                      )
+                    : Array(7)
+                        .fill(0)
+                        .map((_item: number, index: number) => (
+                          <ProgressItem key={index}></ProgressItem>
+                        ))}
                 </div>
               }
             />
