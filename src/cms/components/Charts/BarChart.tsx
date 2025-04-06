@@ -85,7 +85,7 @@ export default function BarChart({
     return () => window.removeEventListener("resize", handleChangeWidthChart);
   }, []);
   return (
-    <div className="w-full h-full !text-xs min-w-[400px]">
+    <div className="w-full h-full !text-xs">
       {showLegend && (
         <div className="flex justify-end items-center gap-4">
           {labels?.length > 0 &&

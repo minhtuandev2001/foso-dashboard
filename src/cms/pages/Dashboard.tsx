@@ -52,7 +52,7 @@ export default function Dashboard() {
       <div
         onClick={() => setClearData(!clearData)}
         className={twMerge(
-          `side-bar-container fixed top-[100px] right-[15px] px-3 h-10  rounded-md flex items-center justify-center text-white shadow-dropdow-custom z-[9999] cursor-pointer ${
+          `side-bar-container fixed top-[100px] right-[150px] px-3 h-10  rounded-md flex items-center justify-center text-white shadow-dropdow-custom z-[9999] cursor-pointer ${
             clearData ? "bg-blue-custom" : "bg-red-custom"
           }`
         )}
