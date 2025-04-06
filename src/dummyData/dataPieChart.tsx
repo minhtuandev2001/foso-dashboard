@@ -1,2 +1,2 @@
-export const dataPieChart = { inComplete: 30, inProgress: 40, finished: 30 };
+export const dataPieChart = { inComplete: 3, inProgress: 4, finished: 3 };
 export const statementExecution = 16;

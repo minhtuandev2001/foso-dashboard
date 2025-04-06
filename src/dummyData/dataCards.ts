@@ -27,21 +27,3 @@ export const dataSale: IDataSaleTrackingCard[] = [
     percent: 4.7,
   },
 ];
-
-export const dataCardProduct: IDataSaleTrackingCard[] = [
-  {
-    quantity: 5,
-    label: "Chưa hoàn thành",
-    colorQuantity: "#FF8F0D",
-  },
-  {
-    quantity: 6,
-    label: "Đang sản xuất",
-    colorQuantity: "#0375F3",
-  },
-  {
-    quantity: 5,
-    label: "hoàn thành",
-    colorQuantity: "#1FC583",
-  },
-];
