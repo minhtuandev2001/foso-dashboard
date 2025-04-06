@@ -10,6 +10,9 @@ import {
 } from "../../dummyData/dataChart";
 import PieChart from "../components/Charts/PieChart";
 import { dataPieChart, statementExecution } from "../../dummyData/dataPieChart";
+import SalesTrackingCard from "../components/Card/SalesTrackingCard";
+import { dataCardProduct, dataSale } from "../../dummyData/dataCards";
+import { IDataSaleTrackingCard } from "../../shared/interface/card";
 
 export default function Dashboard() {
   const itemMenu: IItemDropDown[] = [
@@ -40,6 +43,19 @@ export default function Dashboard() {
       <MainHeader></MainHeader>
       <div className="px-2 lg:px-[48px] w-full h-full">
         <div className="w-full h-full">
+          <DetailHeader
+            title="Top sản phẩm sản xuất nhiều nhất"
+            filter={SelectDateFilter(itemMenu)}
+            children={
+              <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-5">
+                {dataSale &&
+                  dataSale?.length > 0 &&
+                  dataSale.map((item: IDataSaleTrackingCard, index: number) => (
+                    <SalesTrackingCard key={index} data={{ ...item }} />
+                  ))}
+              </div>
+            }
+          />
           <div className="w-full h-full flex gap-6 flex-col table-custom:flex-row">
             <DetailHeader
               title="Kế hoạch sản xuất"
@@ -83,10 +99,25 @@ export default function Dashboard() {
               filter={SelectDateFilter(itemMenu)}
               className="shadow-dropdow-custom"
               children={
-                <PieChart
-                  data={dataPieChart}
-                  dataExecution={statementExecution}
-                />
+                <div className="">
+                  <PieChart
+                    data={dataPieChart}
+                    dataExecution={statementExecution}
+                  />
+                  <div className="flex gap-2">
+                    {dataCardProduct &&
+                      dataCardProduct?.length > 0 &&
+                      dataCardProduct.map(
+                        (item: IDataSaleTrackingCard, index: number) => (
+                          <SalesTrackingCard
+                            key={index}
+                            data={{ ...item }}
+                            className="shadow-none border border-gray-custom/40 !p-2 rounded-[8px]"
+                          />
+                        )
+                      )}
+                  </div>
+                </div>
               }
             />
           </div>

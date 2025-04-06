@@ -26,14 +26,14 @@ export default function PieChart({
   });
 
   useEffect(() => {
-    const percent1 = (data.inComplete / total) * 100;
-    const percent2 = (data.inProgress / total) * 100;
-    const percent3 = (data.finished / total) * 100;
+    const percent1 = ((data.inComplete / total) * 100).toFixed(2);
+    const percent2 = ((data.inProgress / total) * 100).toFixed(2);
+    const percent3 = ((data.finished / total) * 100).toFixed(2);
 
     setDataChart({
-      inCompletePercent: percent1,
-      inProgressPercent: percent2,
-      finishedPercent: percent3,
+      inCompletePercent: Number(percent1),
+      inProgressPercent: Number(percent2),
+      finishedPercent: Number(percent3),
     });
   }, [data.finished, data.inComplete, data.inProgress, total]);
 
