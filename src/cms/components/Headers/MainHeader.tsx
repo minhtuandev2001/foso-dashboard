@@ -56,7 +56,6 @@ export default function MainHeader() {
 
   useEffect(() => {
     const handleCheckMobile = () => {
-      console.log("check ", 1);
       if (isSideBarMobileOpen === true) {
         if (window.innerWidth > 1024) {
           setIsSideBarMobileOpen(false);

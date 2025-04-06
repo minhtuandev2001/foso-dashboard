@@ -20,7 +20,6 @@ const Column = ({
       setWidthDivValue(width?.width ?? 0);
     }
   }, [value]);
-  console.log("check ", widthDivValue);
   return (
     <div
       style={
