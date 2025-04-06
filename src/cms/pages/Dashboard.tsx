@@ -8,6 +8,8 @@ import {
   dataChartHorizontal,
   labels,
 } from "../../dummyData/dataChart";
+import PieChart from "../components/Charts/PieChart";
+import { dataPieChart, statementExecution } from "../../dummyData/dataPieChart";
 
 export default function Dashboard() {
   const itemMenu: IItemDropDown[] = [
@@ -37,7 +39,6 @@ export default function Dashboard() {
     <div>
       <MainHeader></MainHeader>
       <div className="px-2 lg:px-[48px] w-full h-full">
-        <div>card</div>
         <div className="w-full h-full">
           <div className="w-full h-full flex gap-6 flex-col table-custom:flex-row">
             <DetailHeader
@@ -76,7 +77,19 @@ export default function Dashboard() {
               }
             />
           </div>
-          <div>char 2</div>
+          <div>
+            <DetailHeader
+              title="Tình hình sản xuất"
+              filter={SelectDateFilter(itemMenu)}
+              className="shadow-dropdow-custom"
+              children={
+                <PieChart
+                  data={dataPieChart}
+                  dataExecution={statementExecution}
+                />
+              }
+            />
+          </div>
         </div>
       </div>
     </div>
