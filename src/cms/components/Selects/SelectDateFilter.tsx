@@ -7,9 +7,9 @@ const SelectDateFilter = (itemMenu: IItemDropDown[]) => {
   return (
     <Dropdows
       children={
-        <div className=" flex items-center gap-1 p-2 md:p-3 md:gap-2 rounded-[8px] border-[0.5px] border-gray-custom">
+        <div className=" flex items-center gap-1 p-2 md:p-3 max-h-[40px] md:gap-2 rounded-[8px] border-[0.5px] border-gray-custom">
           <CiCalendar />
-          <p className="text-sm md:text-base font-normal text-black-custom text-nowrap">
+          <p className="!text-xs md:!text-base font-normal text-black-custom text-nowrap">
             Quy nay
           </p>
           <IoChevronDownOutline
