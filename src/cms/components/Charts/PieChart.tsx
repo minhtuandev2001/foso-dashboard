@@ -42,7 +42,7 @@ export default function PieChart({
       <div className="h-full relative">
         {/* hoàn thành */}
         {(data?.finished && data?.finished) > 0 && (
-          <div className="absolute inline-block top-4 md:top-9 -right-8 md:-right-12">
+          <div className="absolute inline-block top-4 md:top-9 -right-8 md:-right-12 cursor-pointer hover:scale-[1.05] transition-all">
             <div className="relative">
               <svg
                 className="w-[60px] md:w-[99px]"
@@ -68,7 +68,7 @@ export default function PieChart({
         )}
         {/* chưa hoàn thành */}
         {(data?.inProgress && data?.inProgress) > 0 && (
-          <div className="absolute inline-block top-4 md:top-9 -left-8 md:-left-12">
+          <div className="absolute inline-block top-4 md:top-9 -left-8 md:-left-12 cursor-pointer hover:scale-[1.05] transition-all">
             <div className="relative">
               <svg
                 className="w-[60px] md:w-[99px]"
@@ -94,7 +94,7 @@ export default function PieChart({
         )}
         {/* Đang thực hiện */}
         {(data?.inComplete && data?.inComplete) > 0 && (
-          <div className="absolute inline-block bottom-4 -right-8 md:bottom-9 md:-right-12">
+          <div className="absolute inline-block bottom-4 -right-8 md:bottom-9 md:-right-12 cursor-pointer hover:scale-[1.05] transition-all">
             <div className="relative">
               <svg
                 className="w-[60px] md:w-[99px]"
@@ -119,7 +119,7 @@ export default function PieChart({
           </div>
         )}
         {/* text chinhs giuaw */}
-        <div className="absolute top-1/2 left-1/2 -translate-1/2">
+        <div className="absolute top-1/2 left-1/2 -translate-1/2 select-none">
           <p className="text-center !text-[26px] md:!text-[36px] !font-semibold text-black-custom">
             {dataExecution || 0}
           </p>
@@ -141,7 +141,7 @@ export default function PieChart({
               r="15"
             ></circle>
             <circle
-              className={`${
+              className={`cursor-pointer hover:scale-[1.009] transition-all ${
                 dataChart?.finishedPercent && dataChart?.finishedPercent > 0
                   ? "text-green-custom"
                   : "text-gray-custom/15"
@@ -157,7 +157,7 @@ export default function PieChart({
               transform="rotate(-85 18 18)"
             ></circle>
             <circle
-              className={`${
+              className={`cursor-pointer hover:scale-[1.007] transition-all ${
                 dataChart?.inProgressPercent && dataChart?.inProgressPercent > 0
                   ? "text-light-blue-custom"
                   : "text-gray-custom/40"
@@ -173,7 +173,7 @@ export default function PieChart({
               transform="rotate(17 18 18)"
             ></circle>
             <circle
-              className={`${
+              className={` cursor-pointer hover:scale-[1.009] transition-all ${
                 dataChart?.inProgressPercent && dataChart?.inProgressPercent > 0
                   ? "text-orange-custom"
                   : "text-gray-custom/25"
