@@ -42,7 +42,7 @@ export default function MainHeader() {
     excludeClass: "search-container", // Tắt khi không chứa class này
   });
   return (
-    <div className="w-full bg-blue-custom text-white flex items-center justify-between px-2 py-3  lg:py-5 lg:px-[48px]">
+    <div className="w-full bg-blue-custom text-white flex items-center justify-between px-2 py-3 lg:py-5 lg:px-[48px] fixed top-0 z-[9999]">
       <div className="flex items-center gap-x-6">
         <div className="w-[72.77px] h-[22px] md:w-[82.77px] md:h-[32px]">
           <img src={logo} alt="logo" className="w-full h-full object-cover" />
@@ -75,7 +75,7 @@ export default function MainHeader() {
           <input
             type="text"
             placeholder="Tìm kiếm"
-            className="bg-red-200 font-thin"
+            className="bg-red-200 !font-light"
           />
         </div>
         <div className="flex items-center gap-4">
@@ -92,7 +92,7 @@ export default function MainHeader() {
                   <input
                     type="text"
                     placeholder="Tìm kiếm"
-                    className="bg-red-200 font-thin w-full text-gray-custom pl-1"
+                    className="bg-red-200 !font-light w-full text-gray-custom pl-1"
                   />
                 </div>
               )}

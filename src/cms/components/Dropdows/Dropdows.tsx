@@ -19,12 +19,12 @@ export default function Dropdows({ children, itemMenu }: Props) {
     <div
       ref={wrapperRef}
       onClick={() => setShowMenu(true)}
-      className="group/show text-gray-custom w-full relative text-sm"
+      className="group/show !text-gray-custom w-full relative !text-sm "
     >
       {children}
       <div
         className={twMerge(
-          `hidden absolute top-full right-0 z-[9999] pt-2 animate-fade animate-duration-200 group-hover/show:block ${
+          `hidden absolute top-full right-0 z-[999] pt-2 animate-fade animate-duration-200 group-hover/show:block ${
             showMenu ? "block" : ""
           }`
         )}
