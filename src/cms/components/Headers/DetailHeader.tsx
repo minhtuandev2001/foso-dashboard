@@ -20,7 +20,7 @@ export default function DetailHeader({
       className={twMerge(
         `p-2 md:p-6 ${
           paddingCustom ? "!px-0" : "pr-2 md:pr-4"
-        } w-full h-full rounded-2xl ${className}`
+        } w-full rounded-2xl ${className}`
       )}
     >
       <div

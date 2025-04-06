@@ -7,17 +7,17 @@ export const dataSale: IDataSaleTrackingCard[] = [
     percent: 8.2,
   },
   {
-    quantity: 48,
+    quantity: 18,
     label: "Quần tây",
     percent: -5,
   },
   {
-    quantity: 48,
+    quantity: 40,
     label: "Áo hoodie",
     percent: 12,
   },
   {
-    quantity: 48,
+    quantity: 23,
     label: "Đầm maxi",
     percent: 3.5,
   },

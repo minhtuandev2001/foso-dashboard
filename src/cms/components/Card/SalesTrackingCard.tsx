@@ -28,7 +28,13 @@ export default function SalesTrackingCard({
 
         {percent && (
           <div className="flex gap-2 items-center">
-            {percent > 0 ? <ArrowUp /> : <ArrowDown />}
+            {percent < 0 ? (
+              <span className="text-orange-600">
+                <ArrowDown />
+              </span>
+            ) : (
+              <ArrowUp />
+            )}
             <p className="!font-medium !text-sm !leading-5">{percent}%</p>
           </div>
         )}

@@ -46,7 +46,7 @@ export default function Dashboard() {
   return (
     <div>
       <MainHeader></MainHeader>
-      <div className="px-2 lg:px-[48px] w-full h-full">
+      <div className="px-2 lg:px-[48px] w-full h-full mt-[80px]">
         <div className="w-full h-full">
           <DetailHeader
             title="Top sản phẩm sản xuất nhiều nhất"
@@ -62,7 +62,7 @@ export default function Dashboard() {
               </div>
             }
           />
-          <div className="w-full h-full flex gap-6 flex-col table-custom:flex-row mb-6">
+          <div className="w-full h-full flex gap-6 flex-col table-custom:flex-row mb-6 mt-3 md:mt-0">
             <DetailHeader
               title="Kế hoạch sản xuất"
               filter={SelectDateFilter(itemMenu)}
@@ -117,7 +117,7 @@ export default function Dashboard() {
                 filter={SelectDateFilter(itemMenu)}
                 className="shadow-dropdow-custom"
                 children={
-                  <div className="flex flex-col gap-8 max-h-[466px] overflow-y-scroll pr-1">
+                  <div className="flex flex-col gap-8 h-full max-h-[474px] overflow-y-scroll pr-1">
                     {dataProductProgress && dataProductProgress.length > 0
                       ? dataProductProgress.map(
                           (item: IProgressItemProps, index: number) => (
