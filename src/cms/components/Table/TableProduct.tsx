@@ -9,9 +9,11 @@ export default function TableProduct({ data }: { data: IDataTableProps[] }) {
         <thead className="bg-gray-100">
           <tr className="text-left !text-xs !font-semibold !text-gray-custom !leading-[16px]">
             <th className="px-5 py-2 md:py-4">STT</th>
-            <th className="px-2 py-2 md:py-4">Nguyên vật liệu</th>
-            <th className="px-2 py-2 md:py-4">Đơn vị tính</th>
-            <th className="px-5 py-2 md:py-4">Số lượng</th>
+            <th className="px-2 py-2 md:py-4 w-full">Nguyên vật liệu</th>
+            <th className="px-2 py-2 md:py-4 !min-w-[79px] md:!min-w-[99px]">
+              Đơn vị tính
+            </th>
+            <th className="px-5 py-2 md:py-4 !min-w-[103px]">Số lượng</th>
           </tr>
         </thead>
         <tbody className="w-full h-full">
@@ -44,10 +46,10 @@ export default function TableProduct({ data }: { data: IDataTableProps[] }) {
                     </div>
                   </div>
                 </td>
-                <td className="w-[79px] md:w-[99px] px-2">
+                <td className="!min-w-[79px] md:!min-w-[99px] px-2">
                   <p>{item?.unit}</p>
                 </td>
-                <td className="py-[19px] text-center w-[103px]">
+                <td className="py-[19px] text-center !min-w-[103px]">
                   <p className="line-clamp-1">{item?.quantity}</p>
                 </td>
               </tr>

@@ -184,25 +184,25 @@ export default function MainHeader() {
           />
         </div>
         <ul className="px-2 space-y-[4px]">
-          <li className="transition-all px-3 p-2 hover:bg-gray-custom/20 rounded-[5px] cursor-pointer">
+          <li className="transition-all px-3 p-2 hover:bg-gray-custom/10 rounded-[5px] cursor-pointer">
             Danh mục
           </li>
-          <li className="transition-all px-3 p-2 hover:bg-gray-custom/20 rounded-[5px] cursor-pointer">
+          <li className="transition-all px-3 p-2 hover:bg-gray-custom/10 rounded-[5px] cursor-pointer">
             Bán & xuất hàng
           </li>
-          <li className="transition-all px-3 p-2 hover:bg-gray-custom/20 rounded-[5px] cursor-pointer">
+          <li className="transition-all px-3 p-2 hover:bg-gray-custom/10 rounded-[5px] cursor-pointer">
             Mua & nhập hàng
           </li>
-          <li className="transition-all px-3 p-2 hover:bg-gray-custom/20 rounded-[5px] cursor-pointer">
+          <li className="transition-all px-3 p-2 hover:bg-gray-custom/10 rounded-[5px] cursor-pointer">
             Kho & sản xuất
           </li>
-          <li className="transition-all px-3 p-2 hover:bg-gray-custom/20 rounded-[5px] cursor-pointer">
+          <li className="transition-all px-3 p-2 hover:bg-gray-custom/10 rounded-[5px] cursor-pointer">
             Kế toán
           </li>
-          <li className="transition-all px-3 p-2 hover:bg-gray-custom/20 rounded-[5px] cursor-pointer">
+          <li className="transition-all px-3 p-2 hover:bg-gray-custom/10 rounded-[5px] cursor-pointer">
             Báo cáo & Thống kê
           </li>
-          <li className="transition-all px-3 p-2 hover:bg-gray-custom/20 rounded-[5px] cursor-pointer">
+          <li className="transition-all px-3 p-2 hover:bg-gray-custom/10 rounded-[5px] cursor-pointer">
             Tiện ích
           </li>
         </ul>

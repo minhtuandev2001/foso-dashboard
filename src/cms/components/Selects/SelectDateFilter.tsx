@@ -3,7 +3,7 @@ import { IItemDropDown } from "../../../shared/interface/itemDropdown";
 import Dropdows from "../Dropdows/Dropdows";
 import { IoChevronDownOutline } from "react-icons/io5";
 
-const SelectDateFilter = (itemMenu: IItemDropDown[]) => {
+const SelectDateFilter = ({ itemMenu }: { itemMenu: IItemDropDown[] }) => {
   return (
     <Dropdows
       children={
