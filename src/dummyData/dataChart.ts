@@ -70,42 +70,42 @@ export const dataChart: IDataChart[] = [
 ];
 export const dataChartHorizontal: IDataChart[] = [
   {
-    label: "Áo ba lỗ",
+    label: "Công ty Dệt may Happy Polla",
     colums: [
       {
-        data: 60,
+        data: 2890,
       },
     ],
   },
   {
-    label: "Áo sơ mi",
+    label: "Công ty May mặc Saigon trendy",
     colums: [
       {
-        data: 100,
+        data: 2600,
       },
     ],
   },
   {
-    label: "Áo thun polo",
+    label: "Outlet Lemon squeeze",
     colums: [
       {
-        data: 80,
+        data: 3000,
       },
     ],
   },
   {
-    label: "Quần baggy",
+    label: "Shop quần áo streetwear New...",
     colums: [
       {
-        data: 70,
+        data: 2500,
       },
     ],
   },
   {
-    label: "Quần jogger",
+    label: "Shop thời trang công sở Basic Office",
     colums: [
       {
-        data: 90,
+        data: 2500,
       },
     ],
   },

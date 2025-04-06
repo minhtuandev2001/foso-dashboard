@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { IDataChart, ILabelChart } from "../../../shared/interface/chart";
 import LabelChart from "./LabelChart";
+import Column from "./Column";
 
 type Props = {
   titleMinWidth?: number;
@@ -13,36 +14,6 @@ type Props = {
   showLegend?: boolean;
   lableCategory: string;
   lableValue: string;
-};
-
-const Column = ({
-  dimensions,
-  color,
-  horizontal = false,
-}: {
-  dimensions: number;
-  color: string;
-  horizontal?: boolean;
-}) => {
-  return (
-    <div
-      style={
-        horizontal
-          ? {
-              height: 8,
-              width: dimensions,
-              backgroundColor: color,
-              borderRadius: "0px 4px 4px 0px",
-            }
-          : {
-              height: dimensions,
-              width: 20,
-              backgroundColor: color,
-              borderRadius: "4px 4px 0px 0px",
-            }
-      }
-    ></div>
-  );
 };
 
 const Line = ({
@@ -222,6 +193,7 @@ export default function BarChart({
                             key={indexColumn}
                             dimensions={(i?.data / max) * roll}
                             horizontal={horizontal}
+                            value={i.data}
                           />
                         );
                       })}

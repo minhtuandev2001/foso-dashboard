@@ -18,6 +18,8 @@ import { dataProductProgress } from "../../dummyData/dataProductProgress";
 import { IProgressItemProps } from "../../shared/interface/productProgress";
 import TableProduct from "../components/Table/TableProduct";
 import { dataTableProduct } from "../../dummyData/dataTable";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 export default function Dashboard() {
   const itemMenu: IItemDropDown[] = [
@@ -43,34 +45,53 @@ export default function Dashboard() {
       render: () => <p className="text-nowrap">Năm nay này</p>,
     },
   ];
+  const [clearData, setClearData] = useState<boolean>(false);
   return (
     <div>
+      {/* button clear data */}
+      <div
+        onClick={() => setClearData(!clearData)}
+        className={twMerge(
+          `side-bar-container fixed top-[100px] right-[15px] px-3 h-10  rounded-md flex items-center justify-center text-white shadow-dropdow-custom z-[9999] cursor-pointer ${
+            clearData ? "bg-blue-custom" : "bg-red-custom"
+          }`
+        )}
+      >
+        <p>{clearData ? "fill data" : "clear data"}</p>
+      </div>
+      {/* button clear data */}
       <MainHeader></MainHeader>
       <div className="px-2 lg:px-[48px] w-full h-full mt-[80px]">
         <div className="w-full h-full">
           <DetailHeader
             title="Top sản phẩm sản xuất nhiều nhất"
-            filter={SelectDateFilter(itemMenu)}
+            filter={<SelectDateFilter itemMenu={itemMenu} />}
             className="!px-0"
             children={
               <div className="grid grid-cols-2 gap-2 md:gap-6 md:grid-cols-3 lg:grid-cols-5">
-                {dataSale &&
-                  dataSale?.length > 0 &&
-                  dataSale.map((item: IDataSaleTrackingCard, index: number) => (
-                    <SalesTrackingCard key={index} data={{ ...item }} />
-                  ))}
+                {!clearData && dataSale && dataSale?.length > 0
+                  ? dataSale.map(
+                      (item: IDataSaleTrackingCard, index: number) => (
+                        <SalesTrackingCard key={index} data={{ ...item }} />
+                      )
+                    )
+                  : Array(5)
+                      .fill(0)
+                      .map((item: IDataSaleTrackingCard, index: number) => (
+                        <SalesTrackingCard key={index} data={{ ...item }} />
+                      ))}
               </div>
             }
           />
           <div className="w-full h-full flex gap-6 flex-col table-custom:flex-row mb-6 mt-3 md:mt-0">
             <DetailHeader
               title="Kế hoạch sản xuất"
-              filter={SelectDateFilter(itemMenu)}
+              filter={<SelectDateFilter itemMenu={itemMenu} />}
               className="shadow-dropdow-custom"
               children={
                 <BarChart
                   labels={labels}
-                  data={dataChart}
+                  data={!clearData ? dataChart : []}
                   step={20}
                   max={100}
                   chartHeight={316}
@@ -82,14 +103,14 @@ export default function Dashboard() {
             />
             <DetailHeader
               title="Top 5 khách hàng có sản lượng nhiều nhất"
-              filter={SelectDateFilter(itemMenu)}
+              filter={<SelectDateFilter itemMenu={itemMenu} />}
               className="shadow-dropdow-custom"
               children={
                 <BarChart
                   labels={labels}
-                  data={dataChartHorizontal}
-                  step={20}
-                  max={100}
+                  data={!clearData ? dataChartHorizontal : []}
+                  step={800}
+                  max={3200}
                   horizontal={true}
                   showLegend={false}
                   chartHeight={316}
@@ -103,22 +124,28 @@ export default function Dashboard() {
             <div className="flex flex-col md:flex-row gap-6 xl:w-2/3">
               <DetailHeader
                 title="Tình hình sản xuất"
-                filter={SelectDateFilter(itemMenu)}
+                filter={<SelectDateFilter itemMenu={itemMenu} />}
                 className="shadow-dropdow-custom"
                 children={
                   <PieChart
-                    data={dataPieChart}
-                    dataExecution={statementExecution}
+                    data={
+                      !clearData
+                        ? dataPieChart
+                        : { inComplete: 0, inProgress: 0, finished: 0 }
+                    }
+                    dataExecution={!clearData ? statementExecution : 0}
                   />
                 }
               />
               <DetailHeader
                 title="Tiến độ sản xuất theo nhóm"
-                filter={SelectDateFilter(itemMenu)}
+                filter={<SelectDateFilter itemMenu={itemMenu} />}
                 className="shadow-dropdow-custom"
                 children={
                   <div className="flex flex-col gap-8 h-full max-h-[474px] overflow-y-scroll pr-1">
-                    {dataProductProgress && dataProductProgress.length > 0
+                    {!clearData &&
+                    dataProductProgress &&
+                    dataProductProgress.length > 0
                       ? dataProductProgress.map(
                           (item: IProgressItemProps, index: number) => (
                             <ProgressItem
@@ -139,10 +166,12 @@ export default function Dashboard() {
             <div className=" xl:w-1/3">
               <DetailHeader
                 title="Nguyên vật liệu cần mua"
-                filter={SelectDateFilter(itemMenu)}
+                filter={<SelectDateFilter itemMenu={itemMenu} />}
                 className="shadow-dropdow-custom"
                 paddingCustom
-                children={<TableProduct data={dataTableProduct} />}
+                children={
+                  <TableProduct data={!clearData ? dataTableProduct : []} />
+                }
               />
             </div>
           </div>
